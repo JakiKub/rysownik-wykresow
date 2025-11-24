@@ -1,0 +1,18 @@
+{
+  "name": "rysownik-wykresow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "chartjs-node-canvas": "^5.0.0",
+    "dotenv": "^17.2.3",
+    "regression": "^2.0.1"
+  }
+}
