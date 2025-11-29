@@ -93,7 +93,7 @@ const height = 1000;
                         borderWidth: 0
                     },
                     {
-                        label: "Krzywa regresu",
+                        label: `Krzywa regresu Δx = ${A.toFixed(4)}·F   (k = ${A.toFixed(4)} m/N)`,
                         data: krzywaRegresu,
                         borderWidth: 2,
                         fill: false
