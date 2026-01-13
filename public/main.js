@@ -41,6 +41,8 @@ const save = () => {
 }
 
 const bodyScale = () => {
+    if (window.innerWidth <= 600) return
+
     const scale = 1 / window.devicePixelRatio;
     const app = document.getElementById('app');
     app.style.transform = `scale(${scale})`;
