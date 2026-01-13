@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rysownik wykresów</title>
+        <link rel="shortcut icon" href="./content/rysownik-wykr-ikona.png">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="app">
+            <div class="body-wrapper">
+                <div class="dane-div">
+                    <h2>Wpisz swoje dane (w formacie: 1.2, 3, 4.5, 6):</h2>
+                    <input id="x" placeholder="Wpisz dane na oś X">
+                    <input id="y" placeholder="Wpisz dane na oś Y">
+                </div>
+
+                <div class="legenda-div">
+                    <h2>Wpisz legendę osi</h2>
+                    <input id="xLabel" placeholder="Legenda osi X">
+                    <input id="yLabel" placeholder="Legenda osi Y">
+                </div>
+
+                <div class="blad-div">
+                    <h2>Wpisz błąd pomiarowy (w formacie: 0.2)</h2>
+                    <input id="blad" placeholder="Błąd pomiarowy">
+                    <label class="regresja-checkbox">
+                        <input type="checkbox" id="regresja"><span></span> Pokaż krzywą regresji
+                    </label>
+                </div>
+
+                <div class="przyciski-div">
+                    <button onclick="generate()">GENERUJ WYKRES</button>
+                    <button onclick="save()">ZAPISZ WYKRES</button>
+                    <h2>Wygenerowany wykres będzie poniżej</h2>
+                </div>
+            </div>
+
+            <img id="wykres">
+        </div>
+
+        <script src="./main.js"></script>
+    </body>
+</html>

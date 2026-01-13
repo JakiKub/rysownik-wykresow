@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background: linear-gradient(45deg, #041357, #09a16f);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.body-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 94%;
+    justify-content: space-around;
+}
+
+.dane-div, .legenda-div, .blad-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dane-div > h2, .blad-div > h2, .legenda-div > h2, .przyciski-div > h2, label {
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3em;
+}
+
+.przyciski-div > h2 {
+    display: none;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+div input:not([type="checkbox"]) {
+    font-family: 'Fira Sans', sans-serif;
+    background: linear-gradient(135deg, #02005e, #079280);
+    color: #ffffff;
+    font-size: 1.5em;
+    border-radius: 1em;
+    border: 2px solid #11005e;
+    width: 20rem;
+    height: 2rem;
+}
+::placeholder {
+    color: #dadada;
+    text-align: center;
+    font-size: 1em;
+}
+
+.regresja-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.3em;
+    color: #ffffff;
+}
+.regresja-checkbox input {
+    display: none;
+}
+.regresja-checkbox span {
+    width: 2rem;
+    height: 2rem;
+    aspect-ratio: 1 / 1;
+    border-radius: .7rem;
+    border: 2px solid #031638;
+    background: transparent;
+    position: relative;
+    transition: all 0.2s ease;
+}
+.regresja-checkbox input:checked + span {
+    background: linear-gradient(135deg, #091580, #0c82c7);
+    border-color: #053897;
+}
+
+.przyciski-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.przyciski-div > button {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: 500;
+    background: linear-gradient(90deg, #061d88, #0d9bc7);
+    width: 15rem;
+    height: 2.5rem;
+    border-radius: 1.5em 1em 1.5em 1em;
+    border: none;
+    cursor: pointer;
+    transition-duration: .5s;
+}
+.przyciski-div > button:hover {
+    transform: scale(1.05);
+}
+.przyciski-div > button:active {
+    transform: scale(1);
+}
+
+#wykres {
+    max-width: max-content;
+    transform: scale(.7);
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        overflow-y: visible;
+    }
+
+    .body-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.4rem;
+    }
+
+    .dane-div, .legenda-div, .blad-div {
+        text-align: center;
+        gap: .7rem;
+    }
+
+    .przyciski-div {
+        flex-direction: column;
+        gap: .5rem;
+        margin-top: 0;
+    }
+
+    .przyciski-div > h2 {
+        display: block;
+    }
+
+    #wykres {
+        transform: scale(.28);
+        transform-origin: center;
+    }
+}
