@@ -84,11 +84,20 @@ async function rysownik({
 
     if (showRegression) {
         const a = regresjaPrzezZero(x, y);
+
+        const xMax = Math.max(...x);
+        const regresjaData = [
+            { x: 0, y: 0 },
+            { x: xMax, y: a * xMax }
+        ];
+
         datasets.push({
             label: "Krzywa regresji",
-            data: x.map(v => a * v),
+            data: regresjaData,
+            parsing: false,
             borderWidth: 2,
-            fill: false
+            fill: false,
+            pointRadius: 0
         });
     }
 
@@ -100,8 +109,8 @@ async function rysownik({
         },
         options: {
             scales: {
-                x: { title: { display: true, text: xLabel } },
-                y: { title: { display: true, text: yLabel } }
+                x: { type: "linear", min: 0, title: { display: true, text: xLabel } },
+                y: { min: 0, title: { display: true, text: yLabel } }
             }
         },
         plugins: [bgPlugin(), errorPlugin(y, blad)]

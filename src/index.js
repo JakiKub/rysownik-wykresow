@@ -10,9 +10,9 @@ app.use(express.static("public"));
 
 app.post("/wykres", async (req, res) => {
     try {
-        const buffer = await rysownik(req.body);
+        const svg = await rysownik(req.body);
         res.set("Content-Type", "image/png");
-        res.send(buffer);
+        res.send(svg);
     } catch (err) { 
         res.status(400).json({ error: err.message})
     }
