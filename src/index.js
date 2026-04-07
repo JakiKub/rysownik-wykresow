@@ -18,6 +18,10 @@ app.post("/wykres", async (req, res) => {
     }
 });
 
-app.listen(3002, '0.0.0.0', () => {
+app.get("/side", (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'side.html'));
+})
+
+app.listen(3003, '0.0.0.0', () => {
     console.log("serwer chodzi");
 });
